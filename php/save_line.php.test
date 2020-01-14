@@ -1,0 +1,27 @@
+<?php
+$dbhost='localhost';
+$dbuser = 'root';
+$dbpass = 'ikingtec909';
+
+$waypoint = json_decode($_POST["data"],true);
+
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+if(! $conn ){
+    echo "sql wrong";
+    return;
+}
+$db_selected=mysqli_select_db($conn, 'ikingtec');
+if (!$db_selected){
+    echo "database wrong";
+    return;
+}
+mysqli_query($conn,"set names utf8");
+
+$mysql_str="UPDATE waypoint_table SET longitude = '120.1007840', latitude = '30.1192396', altitude='28', speed = '5', direction = '5', time = '0',yaw = '0', pitch = '0', zoom = '1', action = '0', type = '0' WHERE code = '00000002' AND number = '1'";
+$ret=mysqli_query($conn,$mysql_str);
+
+mysqli_close($conn);
+
+echo $feedback;
+
+?>

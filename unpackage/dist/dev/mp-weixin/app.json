@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/task/task",
+    "pages/task/createTask",
+    "pages/main/main",
+    "pages/login/login",
+    "pages/reg/reg",
+    "pages/pwd/pwd",
+    "pages/user/user",
+    "pages/realtime/realtime"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1d94df",
+    "backgroundColor": "#1d94df"
+  },
+  "tabBar": {
+    "color": "#7a7e83",
+    "selectedColor": "#1d94df",
+    "backgroundColor": "#ffffff",
+    "height": "55px",
+    "iconWidth": "23px",
+    "spacing": "10px",
+    "list": [
+      {
+        "pagePath": "pages/task/task",
+        "text": "任务",
+        "iconPath": "static/img/task_icon.png",
+        "selectedIconPath": "static/img/task_icon_action.png"
+      },
+      {
+        "pagePath": "pages/realtime/realtime",
+        "text": "实时",
+        "iconPath": "static/img/realtime_icon.png",
+        "selectedIconPath": "static/img/realtime_icon_action.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "static/img/account_icon.png",
+        "selectedIconPath": "static/img/account_icon_action.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
