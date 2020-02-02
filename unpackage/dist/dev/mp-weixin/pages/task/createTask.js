@@ -122,7 +122,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniCalendar = function uniCalendar() {return Promise.all(/*! import() | components/uni-calendar/uni-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-calendar/uni-calendar")]).then(__webpack_require__.bind(null, /*! @/components/uni-calendar/uni-calendar.vue */ 97));};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniCalendar = function uniCalendar() {return Promise.all(/*! import() | components/uni-calendar/uni-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-calendar/uni-calendar")]).then(__webpack_require__.bind(null, /*! @/components/uni-calendar/uni-calendar.vue */ 97));};
+
 
 
 
@@ -174,20 +175,11 @@ function nowTime() {
         insert: false,
         selected: [] },
 
-      latitude: 39.909,
-      longitude: 116.39742,
+      latitude: 39.119929,
+      longitude: 117.752705,
       covers: [{
         latitude: 39.9085,
         longitude: 116.39747,
-
-
-
-
-        iconPath: '../../../static/location.png' },
-
-      {
-        latitude: 39.90,
-        longitude: 116.39,
 
 
 
@@ -221,10 +213,27 @@ function nowTime() {
     active: function active(num) {
       this.action = num;
     },
+    regionchange: function regionchange(e) {
+      uni.getCenterLocation({
+        success: function success(value) {
+          console.log(value);
+        } });
+
+    },
     tap: function tap(e) {
       this.polyline[0].points.push({
         latitude: e.detail.latitude,
         longitude: e.detail.longitude });
+
+      var me = this;
+      uni.chooseLocation({
+        success: function success(e) {
+          console.log(e);
+          me.latitude = e.latitude;
+          me.longitude = e.longitude;
+          me.covers[0].longitude = e.longitude;
+          me.covers[0].latitude = e.latitude;
+        } });
 
     },
     confirm: function confirm(e) {
@@ -242,8 +251,19 @@ function nowTime() {
     } },
 
   onLoad: function onLoad() {
+    var me = this;
+    uni.getLocation({
+      type: 'gcj02',
+      success: function success(e) {
+        console.log(e);
+        me.latitude = e.latitude;
+        me.longitude = e.longitude;
+        me.covers[0].longitude = e.longitude;
+        me.covers[0].latitude = e.latitude;
+      } });
 
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

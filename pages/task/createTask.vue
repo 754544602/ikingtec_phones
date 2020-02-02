@@ -9,11 +9,12 @@
 			<span class="title blue">开始时间</span>
 			<button class="primary blue date" @click="open">{{dateInfo.date}} {{dateInfo.time}}</button>
 			<span class="title blue">任务地点</span>
-			<map class="map" :hidden="mapshow" :latitude="latitude" :longitude="longitude" :markers="covers" @tap="tap" :polyline="polyline" :polygons="polygons">
+			<map class="map" id="map1" :hidden="mapshow" :latitude="latitude" :longitude="longitude" :markers="covers" @tap="tap"
+			 @regionchange="regionchange" :polyline="polyline" :polygons="polygons">
 			</map>
 			<span class="title blue">任务描述</span>
-			<textarea placeholder="请输入" class="textarea" auto-height/>
-		</view>
+			<textarea placeholder="请输入" class="textarea" auto-height />
+			</view>
 		<uni-calendar class="calendar" ref="calendar" :time="dateInfo.time" :date="dateInfo.date" :insert="dateInfo.insert" :lunar="dateInfo.lunar" :startDate="dateInfo.startDate" :endDate="dateInfo.endDate" :range="dateInfo.range" @confirm="confirm" @close="close"/>
 		<view class="bottom_content">
 			<button class="primary blue">提交</button>
@@ -35,11 +36,28 @@
 		components: {
 			uniCalendar
 		},
+		onLoad() {
+			var me = this;
+			this.map = uni.createMapContext("map1",this);
+			console.log(this.map.getCenterLocation());
+			uni.getLocation({
+				type:'gcj02',
+				success:function(e){
+					console.log(e)
+					me.latitude = e.latitude
+					me.longitude = e.longitude
+					me.covers[0].longitude = e.longitude;
+					me.covers[0].latitude = e.latitude;
+				}
+			})
+			
+		},
 		data(){
 			return {
 				action:1,
 				date:'',
 				mapshow:false,
+				map:null,
 				dateInfo: {
 					date: nowDate(),
 					startDate: nowDate(),
@@ -50,20 +68,11 @@
 					insert: false,
 					selected: []
 				},
-				latitude: 39.909,
-					longitude: 116.39742,
+					latitude: 39.119929,
+					longitude: 117.752705,
 					covers: [{
 						latitude: 39.9085,
 						longitude: 116.39747,
-						// #ifdef APP-PLUS
-						iconPath: '../../../static/app-plus/location@3x.png',
-						// #endif
-						// #ifndef APP-PLUS
-						iconPath: '../../../static/location.png',
-						// #endif
-					}, {
-						latitude: 39.90,
-						longitude: 116.39,
 						// #ifdef APP-PLUS
 						iconPath: '../../../static/app-plus/location@3x.png',
 						// #endif
@@ -97,11 +106,28 @@
 			active(num){
 				this.action = num
 			},
+			regionchange(e){
+				uni.getCenterLocation({
+					success:function(value){
+						console.log(value)
+					}
+				})
+			},
 			tap(e){
 				this.polyline[0].points.push({
 			        latitude: e.detail.latitude,
 			        longitude: e.detail.longitude
 			    })
+				var me = this
+				uni.chooseLocation({
+					success:function(e){
+						console.log(e)
+						me.latitude = e.latitude
+						me.longitude = e.longitude
+						me.covers[0].longitude = e.longitude;
+						me.covers[0].latitude = e.latitude;
+					}
+				})
 			},
 			confirm(e) {
 				console.log('confirm 返回:', e)
@@ -116,9 +142,6 @@
 				this.$refs.calendar.open();
 				this.mapshow=true;
 			}
-		},
-		onLoad(){
-			
 		}
 	}
 </script>
