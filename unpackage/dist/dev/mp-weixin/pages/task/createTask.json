@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "发起任务",
-  "usingComponents": {
-    "uni-calendar": "/components/uni-calendar/uni-calendar"
-  }
-}

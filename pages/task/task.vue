@@ -8,11 +8,13 @@
 			</navigator>
 		</view>
 		<view>
+			<navigator url="/pages/task/taskDetail">
 			<view class="now_task_content" :style="{backgroundImage:`url(${taskBackgroundImage})`}">
 				<span>任务1</span>
 				<span>10:20</span>
 				<h3>生态城</h3>
 			</view>
+			</navigator>
 		</view>
 		<view class="title_content">
 			<span class="title blue">历史任务</span>

@@ -3,6 +3,7 @@
         <view v-if="hasLogin" class="hello">
             <view class="title">
                 您好 {{userName}}，您已成功登录。
+				
             </view>
         <view v-if="!hasLogin" class="hello">
             <view class="title">
