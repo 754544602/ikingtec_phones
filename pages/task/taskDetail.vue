@@ -124,12 +124,7 @@
 			</form>
 		</view>
 		<scroll-view class="view_content" v-show="action==2">
-			<image src="../../static/DSC09188.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
-			<image src="../../static/DSC09189.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
-			<image src="../../static/DSC09190.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
-			<image src="../../static/DSC09191.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
-			<image src="../../static/DSC09192.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
-			<image src="../../static/DSC09193.JPG" class="image" lazy-load='true' mode="aspectFill"></image>
+			<customSwiper :swiper-list="swiperList" />
 		</scroll-view>
 		<view class="view_content" v-show="action==3">
 			<video id="video1" style="width: 100%;" src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20181126-lite.m4v" controls></video>
@@ -144,6 +139,7 @@
 <script>
 	import uniRate from '@/components/uni-rate/uni-rate.vue'
 	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
+	import customSwiper from '@/components/blackmonth-swiper/index'
 	var sourceType = [
 		['camera'],
 		['album'],
@@ -157,7 +153,8 @@
 	export default {
 		components: {
 			uniRate,
-			uniNavBar
+			uniNavBar,
+			customSwiper
 		},
 		data() {
 			return {
@@ -182,7 +179,26 @@
 				sizeTypeIndex: 2,
 				sizeType: ['压缩', '原图', '压缩或原图'],
 				countIndex: 8,
-				count: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+				count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+				 swiperList: [{
+                    type: 'image',
+                    url: '../../static/DSC09188.JPG'
+                }, {
+                    type: 'image',
+                    url: '../../static/DSC09189.JPG',
+                },  {
+                    type: 'image',
+                    url: '../../static/DSC09190.JPG'
+                }, {
+                    type: 'image',
+                    url: '../../static/DSC09191.JPG'
+                }, {
+                    type: 'image',
+                    url: '../../static/DSC09192.JPG'
+                }, {
+                    type: 'image',
+                    url: '../../static/DSC09193.JPG'
+                }]
 			};
 		},
 		methods: {
