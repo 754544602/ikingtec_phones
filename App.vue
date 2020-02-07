@@ -73,7 +73,7 @@
 			color: $iking-color-blue;
 			font-size: 40upx;
 			line-height: 40upx;
-			padding: 23upx 48upx;
+			padding: 23upx 48upx ;
 			margin: 0;
 			font-weight: 700;
 			border-radius: 15upx;
@@ -128,7 +128,7 @@
 	}
 	.type_content button{
 		width:208upx;
-		padding:27upx 24upx;
+		padding:27upx 0;
 		font-size: 32upx;
 	}
 </style>

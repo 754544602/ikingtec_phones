@@ -308,7 +308,7 @@
 		.pick1{
 			.mini-btn{
 				width: 160upx;
-				margin:0 30upx 0 0upx;
+				margin:0 20upx 0 0upx;
 			} 
 		}
 		uni-picker:nth-child(3){
