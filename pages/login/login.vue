@@ -3,11 +3,11 @@
         <view class="input-group">
             <view class="input-row border">
                 <text class="title">账号：</text>
-                <m-input class="m-input" type="text" clearable focus v-model="account" placeholder="请输入账号"></m-input>
+                <m-input class="m-input input" type="text" clearable focus v-model="account" placeholder="请输入账号"></m-input>
             </view>
             <view class="input-row">
                 <text class="title">密码：</text>
-                <m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
+                <m-input type="password" class="input" displayable v-model="password" placeholder="请输入密码"></m-input>
             </view>
         </view>
         <view class="btn-row">
@@ -175,7 +175,7 @@
                  */
                 if (this.forcedLogin) {
                     uni.reLaunch({
-                        url: '../main/main',
+                        url: '../user/user',
                     });
                 } else {
                     uni.navigateBack();
@@ -226,4 +226,8 @@
         height: 60upx;
         margin: 20upx;
     }
+	.input{
+		border-bottom:3upx solid #fff;
+		margin-bottom: 30upx;
+	}
 </style>
