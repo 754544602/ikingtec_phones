@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "实时",
+  "usingComponents": {
+    "iking-select": "/components/iking-select"
+  }
+}

@@ -1,0 +1,1 @@
+<button class="mini-btn" type="primary" size="mini"><slot></slot><uni-icon vue-id="1" type="arrowdown" size="20" color="#ffffff" bind:__l="__l"></uni-icon></button>

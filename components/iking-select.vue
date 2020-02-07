@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import uniIcon from '@/components/uni-icons/uni-icons.vue'
+	import uniIcon from './uni-icons/uni-icons.vue'
 	export default {
 		components:{
 			uniIcon
