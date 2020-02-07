@@ -1,15 +1,15 @@
 <template>
 		<button type="primary" class="mini-btn" size="mini">
 			<slot></slot>
-		<uni-icon type="arrowdown" size="20" color="#ffffff"></uni-icon>
+		<uni-icons type="arrowdown" size="20" color="#ffffff"></uni-icons>
 		</button>
 </template>
 
 <script>
-	import uniIcon from './uni-icons/uni-icons.vue'
+	import uniIcons from '@/components/uni-icons/uni-icons.vue'
 	export default {
 		components:{
-			uniIcon
+			uniIcons
 		},
 		data() {
 			return {
