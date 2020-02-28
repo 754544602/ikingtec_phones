@@ -2,18 +2,22 @@
   "pages": [
     "pages/task/task",
     "pages/task/createTask",
+    "pages/task/taskDetail",
     "pages/main/main",
     "pages/login/login",
     "pages/reg/reg",
     "pages/pwd/pwd",
     "pages/user/user",
-    "pages/realtime/realtime"
+    "pages/realtime/realtime",
+    "pages/chat/chat",
+    "pages/feedback/feedback"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#1d94df",
-    "backgroundColor": "#1d94df"
+    "backgroundColor": "#1d94df",
+    "pageOrientation": "portrait"
   },
   "tabBar": {
     "color": "#7a7e83",
@@ -43,5 +47,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap12.json"
 }

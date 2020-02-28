@@ -1,8 +1,10 @@
 <script>
+	import request from './common/request.js'
 	export default {
 		onLaunch: function() {
 			const value = JSON.parse(uni.getStorageSync('login_info'))
-			if (value.login_state == "true") {
+			console.log(value)
+			if (value.login_state) {
 				this.$store.state.hasLogin = true;
 				console.log(this.$store)
 				this.$store.state.userName = value.username;
@@ -15,26 +17,28 @@
 		onHide: function() {
 			console.log('App Hide');
 		},
-		globalData: {  
-			basePath:"localhost:8080/"
+		globalData: {
+			// userType:"dronePilot"
+			// userType:"demand"
         }
 	}
+	
 </script>
 
 <style lang="scss">
 	/*每个页面公共css */
 	@import 'uni.scss';
 	@import 'common/uni.scss';
-
+	// @import './static/font/ikingFont.css';
 	@font-face {
-		font-family: ikingFont;
+		font-family: 'ikingFont';
 		font-weight: normal;
 		font-style: normal;
-		src: url('./static/font/SourceHanSansCN-Bold.otf') format('truetype');
+		src: url('./static/font/SourceHanSansCN-Bold.otf');
 	}
 
 	page {
-		font-family: ikingFont;
+		font-family:ikingFont;
 		min-height: 100%;
 		display: flex;
 		background-image: linear-gradient($iking-color-blue 5%, $iking-color-common 45%);
@@ -77,13 +81,34 @@
 			margin: 0;
 			font-weight: 700;
 			border-radius: 15upx;
+			display: inline-block;
+			&:after{
+				border: none;
+			}
+			&.action{
+				color:$iking-color-common;
+				background-color: $iking-color-blue;
+				box-shadow: 1upx 2px 6upx 0.5upx rgba(0, 0, 0, 0.43);
+			}
+			&.blue.date{
+				width: 100%;
+				font-size: 32upx;
+				margin-top: 33upx;
+				margin-bottom: 41upx;
+			}
 		}
 
 		&.blue {
 			background-color: $iking-color-blue;
 			color: $iking-color-common;
 		}
-		
+		&.red {
+			color: #e60012;
+			&.action{
+				background-color: #e60012;
+				color: #fff;
+			}
+		}
 		&.switch{
 			background-color: #73a7c7;
 			border-radius: 7upx 7upx 0 0 ;
@@ -110,25 +135,18 @@
 		box-sizing: border-box;
 		font-size: 24upx;
 	}
-	.primary{
-		&:after{
-			border: none;
-		}
-		&.action{
-			color:$iking-color-common;
-			background-color: $iking-color-blue;
-			box-shadow: 1upx 2px 6upx 0.5upx rgba(0, 0, 0, 0.43);
-		}
-		&.blue.date{
-			width: 100%;
-			font-size: 32upx;
-			margin-top: 33upx;
-			margin-bottom: 41upx;
-		}
-	}
 	.type_content button{
 		width:208upx;
 		padding:27upx 0;
 		font-size: 32upx;
+	}
+	button:after{
+		border: none !important;
+	}
+	.flex{
+		display: flex;
+	}
+	.flex_bottom{
+		align-items: flex-end;
 	}
 </style>

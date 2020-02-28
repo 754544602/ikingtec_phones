@@ -84,17 +84,17 @@
                  * 客户端对账号信息进行一些必要的校验。
                  * 实际开发中，根据业务需要进行处理，这里仅做示例。
                  */
-                if (this.account.length < 5) {
+                if (this.account.length < 3) {
                     uni.showToast({
                         icon: 'none',
                         title: '账号最短为 5 个字符'
                     });
                     return;
                 }
-                if (this.password.length < 6) {
+                if (this.password.length < 3) {
                     uni.showToast({
                         icon: 'none',
-                        title: '密码最短为 6 个字符'
+                        title: '密码最短为 3 个字符'
                     });
                     return;
                 }
@@ -108,44 +108,28 @@
 						username:me.account,
 						password:me.password
 					}
-				uni.request({
-					url: "http://47.106.185.144:8080/php/login.php",
-					method:"POST",
-					header: {
-					        'content-type': 'application/x-www-form-urlencoded' //自定义请求头信息
-					    },
-					dataType:"json",
-					data: updata,
-					success: (res) => {
-						if(res.data.login_state=="true"){
-							uni.setStorage({
-							    key: 'login_info',
-							    data: JSON.stringify(res.data),
-							    success: function () {
-							        console.log('login_info：success');
-							    }
-							});
-							me.toMain(me.account);
-						}else {
-							uni.showToast({
-								icon: 'none',
-								title: '用户账号或密码不正确',
-							});
-						}
-						this.res = '请求结果 : ' + JSON.stringify(res);
-					},
-					fail: (err) => {
-						console.log('request fail', err);
-						uni.showModal({
-							content: err.errMsg,
-							showCancel: false
-						});
-					},
-					complete: () => {
-						this.loading = false;
-					}
-				});
-                
+					console.log(updata)
+					this.$request.post("/api/user/login",updata).then(res=>{
+						console.log(res)
+							if(res.flag==0){
+								res.data.login_state =true;
+								uni.setStorage({
+								    key: 'login_info',
+								    data: JSON.stringify(res.data),
+								    success: function () {
+								        console.log('login_info：success');
+								    }
+								});
+								me.toMain(me.account);
+							}else {
+								
+								uni.showToast({
+									icon: 'none',
+									title: '用户账号或密码不正确',
+								});
+							}
+							this.res = '请求结果 : ' + JSON.stringify(res);
+					})
             },
             oauth(value) {
                 uni.login({

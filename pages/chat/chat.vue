@@ -2,7 +2,7 @@
 	<view>
 		<scroll-view scroll-y="true" class="scroll_view" @scrolltolower="lower" :scroll-top="scrollTop">
 			<!-- <view class="websocket-msg" :scroll-top="scrollTop" v-for="item in message">{{item}}</view> -->
-			<view v-for="(item,index) in message">
+			<view v-for="(item,index) in message" :key="index">
 				<view class="iking-flex-left iking-flex-top messageContent" v-if="item.from!='me'">
 					<view class="acceptImage">
 						<image src="../../static/blackImage.png"></image>

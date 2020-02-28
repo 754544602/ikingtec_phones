@@ -18,7 +18,18 @@
             "path" : "pages/task/taskDetail",
             "style" : {
                 "navigationBarTitleText" : "任务详情",
-                "navigationStyle" : "custom"
+				"disableScroll":true,
+                "app-plus": {
+                	"titleNView": {
+                		"buttons": [{
+                			"text": "待审批",
+                			"fontSize": "40upx",
+							"color":"#007AFF",
+							"fontSrc":"/static/font/SourceHanSansCN-Bold.otf",
+							"width":"160upx"
+                		}]
+                	}
+                }
             }
         },
         {
@@ -55,7 +66,19 @@
         {
             "path" : "pages/realtime/realtime",
             "style" : {
-                "navigationBarTitleText" : "实时"
+                "navigationBarTitleText" : "实时",
+				"app-plus": {
+					"titleNView": {
+						// "buttons": [{
+						// 	"text": "默认",
+						// 	"fontSize": "32upx",
+						// 	"color":"#fff",
+						// 	"fontSrc":"/static/font/SourceHanSansCN-Bold.otf",
+						// 	"width":"auto",
+						// 	"select":true
+						// }]
+					}
+				}
             }
         },
         {
@@ -63,7 +86,13 @@
             "style" : {
             	"navigationBarTitleText" : "聊天室"
             }
-        }
+        },
+		{
+			"path" : "pages/feedback/feedback",
+			"style" : {
+				"navigationBarTitleText" : "feedback"
+			}
+		}
     ],
     "tabBar" : {
         "color" : "#7a7e83",
@@ -96,6 +125,11 @@
     "globalStyle" : {
         "navigationBarTextStyle" : "white",
         "navigationBarBackgroundColor" : "#1d94df",
-        "backgroundColor" : "#1d94df"
+        "backgroundColor" : "#1d94df",
+		"pageOrientation":"portrait",
+		"app-plus": {
+			 "bounce": "none", 
+			 "scrollIndicator":false
+		}
     }
 }

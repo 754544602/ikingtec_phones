@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "任务详情",
+  "disableScroll": true,
+  "usingComponents": {
+    "uni-rate": "/components/uni-rate/uni-rate",
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "custom-swiper": "/components/blackmonth-swiper/index",
+    "uni-calendar": "/components/uni-calendar/uni-calendar",
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "img-preview": "/components/img-preview/img-preview"
+  }
+}

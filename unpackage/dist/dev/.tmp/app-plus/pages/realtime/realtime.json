@@ -1,4 +1,9 @@
 {
   "navigationBarTitleText": "实时",
-  "usingComponents": {}
+  "titleNView": {},
+  "usingComponents": {
+    "iking-select": "/components/iking-select",
+    "mpvue-picker": "/components/mpvue-picker/mpvuePicker",
+    "uni-icons": "/components/uni-icons/uni-icons"
+  }
 }

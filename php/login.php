@@ -10,7 +10,7 @@ $device_info="";
 $dbhost='localhost';
 //$dbhost='47.106.185.144';
 $dbuser = 'root';
-$dbpass = 'ikingtec909';
+$dbpass = '123';
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 if(! $conn ){
@@ -23,7 +23,7 @@ if (!$db_selected){
     return;
 }
 
-$query = mysqli_query($conn,"SELECT * FROM user_table WHERE username ='".$username."'");
+$query = mysqli_query($conn,"SELECT * FROM user_table WHERE USER_CODE ='".$username."'");
 
 if($query){
     $user_info=mysqli_fetch_array($query);
@@ -35,7 +35,7 @@ if($query){
 
 mysqli_close($conn);
 
-$login_info=array("username"=>$username,"id"=>$userid,"login_state"=>$success);
+$login_info=array("USER_NAME"=>$username,"USER_ID"=>$userid,"login_state"=>$success);
 echo json_encode($login_info);
 return;
 ?>

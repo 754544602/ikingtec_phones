@@ -6,7 +6,7 @@
 				<view class="uni-calendar__header-btn-box" @click="close">
 					<text class="uni-calendar__header-text uni-calendar--fixed-width">取消</text>
 				</view>
-				<picker class="uni-calendar__header-btn-box" mode="time" :value="nowTime" start="00:00" end="23:59" @change="bindTimeChange">
+				<picker class="uni-calendar__header-btn-box" v-if="type=='time'" mode="time" :value="nowTime" start="00:00" end="23:59" @change="bindTimeChange">
 					<view class="uni-calendar__header-text">{{nowTime}}</view>
 				</picker>
 				<view class="uni-calendar__header-btn-box" @click="confirm">
@@ -55,6 +55,10 @@
 			time:{
 				type: String,
 				default: '00:00'
+			},
+			type:{
+				type:String,
+				default: 'date'
 			},
 			/**
 			 * 打点日期

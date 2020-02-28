@@ -3,29 +3,27 @@
 		<view v-if="hasLogin">
 			<view class="iking-flex-left">
 				<view class="headImage">
-					<image src="../../static/headimage.png"></image>
+					<image class="image"  src="../../static/headimage.png" mode="scaleToFill"></image>
 				</view>
 				<view class="headRight">
 					<view class="iking-flex-between">
-						<span class="realName">姓名</span>
+						<span class="realName">{{userInfo.username}}</span>
 						<span class="changeInfo">修改</span>
 					</view>
 					<p class="desc">
-						描述描述描述
-						描述描述描述
-						描述描述描述
+						{{userInfo.desc || ""}}
 					</p>
 				</view>
 			</view>
 			<view class="middle">
 				<view class="span-view">
-					<span>电话：</span><span>15256632589</span>
+					<span>电话：</span><span>{{userInfo.phone || '--'}}</span>
 				</view>
 				<view class="span-view">
-					<span>部门：</span><span>交管部门</span>
+					<span>部门：</span><span>{{userInfo.dept || '--'}}</span>
 				</view>
 				<view class="span-view">
-					<span>职位：</span><span>交警</span>
+					<span>职位：</span><span>{{userInfo.job || '--'}}</span>
 				</view>
 			</view>
 		</view>
@@ -43,6 +41,11 @@
     } from 'vuex'
 
     export default {
+		data(){
+			return {
+				userInfo:this.$userInfo()
+			}
+		},
         computed: {
             ...mapState(['hasLogin', 'forcedLogin'])
         },
@@ -78,7 +81,7 @@
 .headImage{
 	width: 371upx;
 	height: 270upx;
-	uni-image{
+	.image{
 		width: 100%;
 		height: 100%;
 	}

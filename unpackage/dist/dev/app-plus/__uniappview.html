@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"ikingtec_phone","entryPagePath":"pages/task/task.html","page":{"pages/task/task.html":{"window":{"navigationBarTitleText":"任务","navigationStyle":"custom","usingComponents":{"uni-calendar":"/components/uni-calendar/uni-calendar"}}},"pages/task/createTask.html":{"window":{"navigationBarTitleText":"发起任务","usingComponents":{"uni-calendar":"/components/uni-calendar/uni-calendar","uni-icon":"/components/uni-icons/uni-icons","iking-select":"/components/iking-select"}}},"pages/task/taskDetail.html":{"window":{"navigationBarTitleText":"任务详情","disableScroll":true,"titleNView":{"buttons":[{"text":"待审批","fontSize":"40upx","color":"#007AFF","fontSrc":"/static/font/SourceHanSansCN-Bold.otf","width":"160upx"}]},"usingComponents":{"uni-rate":"/components/uni-rate/uni-rate","uni-nav-bar":"/components/uni-nav-bar/uni-nav-bar","custom-swiper":"/components/blackmonth-swiper/index","uni-calendar":"/components/uni-calendar/uni-calendar","uni-icons":"/components/uni-icons/uni-icons","img-preview":"/components/img-preview/img-preview","uni-drawer":"/components/uni-drawer/uni-drawer","uni-list":"/components/uni-list/uni-list","uni-list-item":"/components/uni-list-item/uni-list-item"}}},"pages/main/main.html":{"window":{"navigationBarTitleText":"首页","navigationStyle":"custom","usingComponents":{}}},"pages/login/login.html":{"window":{"navigationBarTitleText":"登录","usingComponents":{"m-input":"/components/m-input"}}},"pages/reg/reg.html":{"window":{"navigationBarTitleText":"注册","usingComponents":{"m-input":"/components/m-input"}}},"pages/pwd/pwd.html":{"window":{"navigationBarTitleText":"找回密码","usingComponents":{"m-input":"/components/m-input"}}},"pages/user/user.html":{"window":{"navigationBarTitleText":"我的","usingComponents":{}}},"pages/realtime/realtime.html":{"window":{"navigationBarTitleText":"实时","titleNView":{},"usingComponents":{"iking-select":"/components/iking-select","mpvue-picker":"/components/mpvue-picker/mpvuePicker","uni-icons":"/components/uni-icons/uni-icons"}}},"pages/chat/chat.html":{"window":{"navigationBarTitleText":"聊天室","usingComponents":{}}},"pages/feedback/feedback.html":{"window":{"navigationBarTitleText":"feedback","usingComponents":{}}}},"global":{"window":{"navigationBarTextStyle":"white","navigationBarBackgroundColor":"#1d94df","backgroundColor":"#1d94df","pageOrientation":"portrait","bounce":"none","scrollIndicator":false}},"tabBar":{"color":"#7a7e83","selectedColor":"#1d94df","backgroundColor":"#ffffff","borderStyle":"black","list":[{"pagePath":"pages/task/task.html","text":"任务","iconPath":"static/img/task_icon.png","selectedIconPath":"static/img/task_icon_action.png"},{"pagePath":"pages/realtime/realtime.html","text":"实时","iconPath":"static/img/realtime_icon.png","selectedIconPath":"static/img/realtime_icon_action.png"},{"pagePath":"pages/user/user.html","text":"我的","iconPath":"static/img/account_icon.png","selectedIconPath":"static/img/account_icon_action.png"}],"position":"bottom","height":"55px","iconWidth":"23px","spacing":"10px"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/task/task","pages/task/createTask","pages/task/taskDetail","pages/main/main","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/user/user","pages/realtime/realtime","pages/chat/chat","pages/feedback/feedback"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.5.1","usingComponents":{}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>
