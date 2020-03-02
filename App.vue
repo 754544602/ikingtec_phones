@@ -29,7 +29,6 @@
 	/*每个页面公共css */
 	@import 'uni.scss';
 	@import 'common/uni.scss';
-	// @import './static/font/ikingFont.css';
 	@font-face {
 		font-family: 'ikingFont';
 		font-weight: normal;

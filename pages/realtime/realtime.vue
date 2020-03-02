@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="selectDeviceView">
+		<view class="selectDeviceView" style="position: fixed;">
 			<picker ref="pick" :value="selectDevice" :range="deviceList" @change="changeDevice">
 				<iking-select>
 					{{deviceList[selectDevice].label}}
@@ -8,10 +8,11 @@
 			</picker>
 		</view>
 		<view class="liveView">
-			<video class="livePlayer" :src="liveSrc" id="myVideo" autoplay></video>
-			<span class="liveSpan">实时视频</span>
+			<cover-view class="livePlayerView">
+				<video class="livePlayer" :src="liveSrc" id="myVideo" autoplay></video>
+			</cover-view>
+			<cover-view class="liveSpan">实时视频</cover-view>
 		</view>
-		
 		<mpvue-picker
 			ref="mpvuePicker"
 			:deepLength="1"
@@ -21,21 +22,27 @@
 		></mpvue-picker>
 		<map class="map" id="map" :latitude="latitude" :longitude="longitude">
 		</map>
-		<!-- <cover-view class="selectDeviceView">
+		<cover-view class="selectDeviceView" style="border: #333333 solid 2upx;">
 			{{deviceList[selectDevice].label}}
 			<uni-icons type="arrowdown" size="20" color="#ffffff"></uni-icons>
-		</cover-view> -->
+		</cover-view>
 	</view>
 </template>
 <script>
 	import ikingSelect from '@/components/iking-select.vue'
 import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
 	import uniIcons from '@/components/uni-icons/uni-icons.vue'
+	import uniDrawer from '@/components/uni-drawer/uni-drawer.vue'
+	import uniList from '@/components/uni-list/uni-list.vue'
+	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
 	export default {
 		components: {
 			ikingSelect,
 			mpvuePicker,
-			uniIcons
+			uniIcons,
+			uniDrawer,
+			uniList,
+			uniListItem
 		},
 		data() {
 			return {
@@ -160,6 +167,7 @@ import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
 	.selectDeviceView {
 		position: absolute;
 		bottom: 44upx;
+		// top: 100upx;
 		left: 32upx;
 		z-index: 1000;
 		background: $iking-color-blue;
@@ -175,16 +183,22 @@ import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
 		padding: 0 40upx;
 		box-sizing: border-box;
 		left: 0;
+		.livePlayerView{
+			border: 6upx solid #1d94df;
+			border-radius: 6upx;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 1;
+		}
 	}
 	.livePlayer{
-		border: 6upx solid #1d94df;
-		border-radius: 6upx;
 		width: 100%;
 		height: 100%;
 	}
 	.liveSpan{
 		position: absolute;	
-		top: 0;
+		top:5upx;
 		left: 55upx;
 		color: #fff;
 	}

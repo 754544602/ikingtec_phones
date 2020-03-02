@@ -86,7 +86,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.5.1",
+      "compilerVersion": "2.4.6",
       "control": "v8",
       "nvueCompiler": "uni-app",
       "renderer": "auto",
@@ -127,9 +127,5 @@
       ],
       "selected": 0
     }
-  },
-  "screenOrientation": [
-    "portrait-primary",
-    "portrait-secondary"
-  ]
+  }
 }

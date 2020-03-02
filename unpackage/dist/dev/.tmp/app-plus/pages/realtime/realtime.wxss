@@ -56,15 +56,21 @@
   box-sizing: border-box;
   left: 0;
 }
+.liveView .livePlayerView {
+    border: 6rpx solid #1d94df;
+    border-radius: 6rpx;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
 .livePlayer {
-  border: 6rpx solid #1d94df;
-  border-radius: 6rpx;
   width: 100%;
   height: 100%;
 }
 .liveSpan {
   position: absolute;
-  top: 0;
+  top: 5rpx;
   left: 55rpx;
   color: #fff;
 }

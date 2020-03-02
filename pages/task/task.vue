@@ -132,22 +132,22 @@
 			this.getHistoryList()
 		},
 		onLoad() {
-			uni.loadFontFace({
-			    family: 'ikingFont',
-			    // 本地字体路径需转换为平台绝对路径
-				// #ifdef APP-PLUS
-			    source: `url(${plus.io.convertLocalFileSystemURL('/static/font/SourceHanSansCN-Bold.otf')})`,
-			    // #endif
-				// #ifdef H5
-				source: `url(${'/static/font/SourceHanSansCN-Bold.otf'})`,
-				// #endif
-				success() {
-			        console.log('success')
-			    },
-			    fail(e) {
-			        console.log('fail',JSON.stringify(e))
-			    }
-			})
+			// uni.loadFontFace({
+			//     family: 'ikingFont',
+			//     // 本地字体路径需转换为平台绝对路径
+			// 	// #ifdef APP-PLUS
+			//     source: `url(${plus.io.convertLocalFileSystemURL('/static/font/SourceHanSansCN-Bold.otf')})`,
+			//     // #endif
+			// 	// #ifdef H5
+			// 	source: `url(${'/static/font/SourceHanSansCN-Bold.otf'})`,
+			// 	// #endif
+			// 	success() {
+			//         console.log('success')
+			//     },
+			//     fail(e) {
+			//         console.log('fail',JSON.stringify(e))
+			//     }
+			// })
 		}
 	}
 	
