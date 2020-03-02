@@ -77,12 +77,6 @@
 						</view>
 					</view>
 				</view>
-				<template v-if="!src">
-					<view class="uni-hello-addfile" @tap="chooseVideo">+ 添加视频</view>
-				</template>
-				<template v-else>
-					<video :src="src" class="video"></video>
-				</template>
 			</form>
 		</scroll-view>
 		<uni-calendar

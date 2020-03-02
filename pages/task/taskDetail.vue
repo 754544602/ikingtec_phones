@@ -36,7 +36,7 @@
 					<button class="switch" :class="[action == 5 ? 'action' : '']" @click="active(5)">违规判定</button>
 				</view>
 				<view v-if="taskInfo.type == 'timeliness' && statusCode > 3 || userType == 'dronePilot'"><button class="switch" :class="[action == 3 ? 'action' : '']" @click="active(3)">视频</button></view>
-				<view v-if="taskInfo.type == 'cycle' && statusCode > 2"><button class="switch" :class="[action == 6 ? 'action' : '']" @click="active(6)">标准</button></view>
+				<view v-if="taskInfo.type == 'cycle'"><button class="switch" :class="[action == 6 ? 'action' : '']" @click="active(6)">标准</button></view>
 				<view v-if="taskInfo.type == 'timeliness' && statusCode > 3">
 					<button class="switch" :class="[action == 4 ? 'action' : '']" @click="active(4)">沟通记录</button>
 				</view>
@@ -148,16 +148,28 @@
 				<!-- <img-preview @clickPic="closeImage" v-if="imageDetail" :picList="taskInfo.imageList" :current="current"></img-preview> -->
 			</scroll-view>
 			<scroll-view class="view_content" v-show="action == 5" scroll-y="true" >
+				<span class="title blue">任务素材</span>
 				<swiper class="swiper">
-					<swiper-item v-for="item in taskInfo.imageList">
+					<swiper-item v-for="item,index in taskInfo.imageList" :key="index" @click="clickImage(taskInfo.imageList,index)">
 						<view class="swiper-item flex iking-flex-center" style="background-color: #000;"><image :src="item.url" width="100%"></image></view>
+					</swiper-item>
+					<swiper-item v-if="taskInfo.imageList.length==0">
+					<view class="flex iking-flex-center">
+						<span>暂无图片</span>
+					</view>
 					</swiper-item>
 				</swiper>
 				<video :id="'video' + index" style="width: 100%;" :src="item.url" :key="index" v-for="(item, index) in taskInfo.videoList" controls></video>
 				<div class="list">
+					<span class="title blue">任务标准</span>
 					<swiper class="swiper">
-						<swiper-item v-for="item in taskInfo.referenceList">
+						<swiper-item v-for="item,index in taskInfo.referenceList" :key="index" @click="clickImage(taskInfo.referenceList,index)">
 							<view class="swiper-item flex iking-flex-center" style="background-color: #000;"><image :src="item.url" mode="aspectFit"></image></view>
+						</swiper-item>
+						<swiper-item v-if="taskInfo.referenceList.length==0">
+						<view class="flex iking-flex-center">
+							<span>暂无标准</span>
+						</view>
 						</swiper-item>
 					</swiper>
 				</div>
@@ -405,6 +417,16 @@ export default {
 				})[index]
 			});
 		},
+		clickImage(list,index){
+			uni.previewImage({
+				urls: list.map(e => {
+					return e.url;
+				}),
+				current: list.map(e => {
+					return e.url;
+				})[index]
+			});
+		},
 		imageLoad(index){
 			console.log(index)
 		},
@@ -531,6 +553,9 @@ export default {
 						// me.taskInfo.taskList.filter(val=>{
 						// 	return val.id!=me.taskInfo.pkId
 						// })
+						if(!me.taskInfo.taskList){
+							me.taskInfo.taskList = [];
+						}
 						me.taskInfo.taskList.pop();
 						me.taskInfo.taskList.unshift({
 							id:this.taskId,

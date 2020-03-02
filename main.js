@@ -3,6 +3,7 @@ import App from './App'
 
 import store from './store'
 import request from '@/common/request.js'
+import config from '@/common/config.js'
 Vue.config.productionTip = false
 
 Vue.prototype.$store = store
@@ -13,7 +14,7 @@ Vue.prototype.$userInfo = function(){
 
 function connectSocket(){
 	uni.connectSocket({
-	  url: 'ws://192.168.1.113:3000'
+	  url: `ws://${config.ip}:3000`
 	});
 }
 connectSocket();
