@@ -1,5 +1,5 @@
 
-.uni-rate.data-v-1e2452d5 {
+.uni-rate.data-v-ac235604 {
 	
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -12,12 +12,12 @@
 	-webkit-flex-direction: row;
 	        flex-direction: row;
 }
-.uni-rate__icon.data-v-1e2452d5 {
+.uni-rate__icon.data-v-ac235604 {
 	position: relative;
 	line-height: 0;
 	font-size: 0;
 }
-.uni-rate__icon-on.data-v-1e2452d5 {
+.uni-rate__icon-on.data-v-ac235604 {
 	overflow: hidden;
 	position: absolute;
 	top: 0;

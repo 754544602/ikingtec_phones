@@ -1,5 +1,5 @@
 
-.uni-calendar-item__weeks-box.data-v-32e99c61 {
+.uni-calendar-item__weeks-box.data-v-4d645e50 {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	        flex: 1;
@@ -19,15 +19,15 @@
 	-webkit-align-items: center;
 	        align-items: center;
 }
-.uni-calendar-item__weeks-box-text.data-v-32e99c61 {
+.uni-calendar-item__weeks-box-text.data-v-4d645e50 {
 	font-size: 28rpx;
 	color: #333;
 }
-.uni-calendar-item__weeks-lunar-text.data-v-32e99c61 {
+.uni-calendar-item__weeks-lunar-text.data-v-4d645e50 {
 	font-size: 24rpx;
 	color: #333;
 }
-.uni-calendar-item__weeks-box-item.data-v-32e99c61 {
+.uni-calendar-item__weeks-box-item.data-v-4d645e50 {
 	position: relative;
 	
 	display: -webkit-box;
@@ -47,7 +47,7 @@
 	width: 100rpx;
 	height: 100rpx;
 }
-.uni-calendar-item__weeks-box-circle.data-v-32e99c61 {
+.uni-calendar-item__weeks-box-circle.data-v-4d645e50 {
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -56,28 +56,28 @@
 	border-radius: 8px;
 	background-color: #dd524d;
 }
-.uni-calendar-item--disable.data-v-32e99c61 {
+.uni-calendar-item--disable.data-v-4d645e50 {
 	background-color: rgba(249, 249, 249, 0.3);
 	color: #c0c0c0;
 }
-.uni-calendar-item--isDay-text.data-v-32e99c61 {
+.uni-calendar-item--isDay-text.data-v-4d645e50 {
 	color: #007aff;
 }
-.uni-calendar-item--isDay.data-v-32e99c61 {
+.uni-calendar-item--isDay.data-v-4d645e50 {
 	background-color: #007aff;
 	opacity: 0.8;
 	color: #fff;
 }
-.uni-calendar-item--extra.data-v-32e99c61 {
+.uni-calendar-item--extra.data-v-4d645e50 {
 	color: #dd524d;
 	opacity: 0.8;
 }
-.uni-calendar-item--checked.data-v-32e99c61 {
+.uni-calendar-item--checked.data-v-4d645e50 {
 	background-color: #007aff;
 	color: #fff;
 	opacity: 0.8;
 }
-.uni-calendar-item--multiple.data-v-32e99c61 {
+.uni-calendar-item--multiple.data-v-4d645e50 {
 	background-color: #007aff;
 	color: #fff;
 	opacity: 0.8;

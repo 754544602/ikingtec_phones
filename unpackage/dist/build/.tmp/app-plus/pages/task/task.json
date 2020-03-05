@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "任务",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-calendar": "/components/uni-calendar/uni-calendar"
+  }
 }

@@ -26,6 +26,7 @@
 /* 文章场景相关 */
 .content {
   padding: 0 20rpx 112rpx 20rpx;
+  height: calc(100% - 112rpx);
 }
 .type_content {
   display: -webkit-box;
@@ -40,8 +41,8 @@
   width: 100%;
   margin-top: 51rpx;
 }
-.cycleType {
-  width: 160rpx;
+.cycleType .mini-btn {
+  width: 160rpx !important;
   margin: 0 30rpx 0 40rpx;
 }
 .cycleContent {
@@ -55,26 +56,26 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.cycleContent .pick1 .mini-btn {
-    width: 160rpx;
-    margin: 0 30rpx 0 0rpx;
+.cycleContent > .pick1 .mini-btn {
+    width: 160rpx !important;
+    margin: 0 20rpx 0 0rpx;
+    padding: 10rpx;
 }
-.cycleContent uni-picker:nth-child(3) .mini-btn {
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: inline-flex;
+.cycleContent .pick2 .mini-btn {
+    display: -webkit-inline-box !important;
+    display: -webkit-inline-flex !important;
+    display: inline-flex !important;
+    width: 100rpx !important;
+    padding: 0 10rpx 0 16rpx !important;
 }
-.cycleContent uni-picker:nth-child(3) .mini-btn:nth-child(1) {
-      width: 100rpx;
-      padding: 0 10rpx 0 16rpx;
-      margin: 0 10rpx 0 0rpx;
+.cycleContent .pick2 .mini-btn.ikingSelect1 {
+      margin: 0 10rpx 0 0rpx !important;
 }
-.cycleContent uni-picker:nth-child(3) .mini-btn:nth-child(3) {
-      width: 100rpx;
-      padding: 0 10rpx 0 16rpx;
-      margin: 0 0rpx 0 10rpx;
+.cycleContent .pick2 .mini-btn.ikingSelect2 {
+      margin: 0 0rpx 0 10rpx !important;
 }
-.cycleContent .addCycle, .cycleContent .delCycle {
+.cycleContent .addCycle,
+  .cycleContent .delCycle {
     width: 30rpx;
     height: 30rpx;
     border-radius: 50%;
@@ -100,6 +101,7 @@
   border-radius: 13rpx;
   padding: 37rpx 20rpx;
   color: #2ba3ef;
+  box-sizing: border-box;
 }
 .map {
   width: 100%;

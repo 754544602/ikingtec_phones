@@ -1,0 +1,164 @@
+<template>
+	<div class="content">
+		<div class="selectDeviceView" style="position: fixed;">
+			<picker ref="pick" :value="selectDevice" :range="deviceList" @change="changeDevice">
+				<iking-select>
+					{{deviceList[selectDevice].label}}
+				</iking-select>
+			</picker>
+		</div>
+		<div class="liveView">
+			<cover-view class="liveSpan">实时视频</cover-view>
+			<video class="livePlayer" :src="liveSrc" id="myVideo" autoplay></video>
+		</div>
+		<mpvue-picker
+			ref="mpvuePicker"
+			:deepLength="1"
+			@onConfirm="onConfirm"
+			@onCancel="onCancel"
+			:pickerValueArray="deviceList"
+		></mpvue-picker>
+		<!-- <map class="map" id="map" ref="map" :latitude="latitude" :longitude="longitude"> -->
+		</map>
+	</div>
+</template>
+<script>
+	import ikingSelect from '@/components/iking-select.vue'
+import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
+	import uniIcons from '@/components/uni-icons/uni-icons.vue'
+	import uniDrawer from '@/components/uni-drawer/uni-drawer.vue'
+	import uniList from '@/components/uni-list/uni-list.vue'
+	import uniListItem from '@/components/uni-list-item/uni-list-item.vue'
+	export default {
+		components: {
+			ikingSelect,
+			mpvuePicker,
+			uniIcons,
+			uniDrawer,
+			uniList,
+			uniListItem
+		},
+		data() {
+			return {
+				email: '',
+				latitude: 39.119929,
+				longitude: 117.752705,
+				videoContext:null,
+				deviceList: [
+				{
+					label: '无人机1',
+					value: 110000
+				},
+				{
+					label: '无人机2',
+					value: 120000
+				},
+				{
+					label: '无人机3',
+					value: 440100
+				},
+				{
+					label: '无人机4',
+					value: 440300
+				}
+			],
+				selectDevice: 0,
+				liveSrc:'rtmp://47.106.185.144/live/dock_camera_top_20000003'
+			}
+		},
+		methods: {
+			changeDevice(e) {
+				this.selectDevice = e.detail.value;
+			},
+			onConfirm(e) {
+				console.log(e.label);
+				this.setStyle(0, e.label);
+			},
+			onCancel(e) {
+				console.log(e);
+			},
+			showSinglePicker() {
+				this.$refs.mpvuePicker.showPicker=true;
+				console.log()
+				this.$refs.mpvuePicker.show();
+			},
+		},
+		onReady() {
+			this.map = uni.createMapContext('map',this)
+			this.videoContext = uni.createVideoContext('myVideo')
+			this.videoContext.play();
+			// #ifdef APP-PLUS
+			new plus.video.VideoPlayer('video',{
+				src:'rtmp://47.106.185.144/live/dock_camera_top_20000003'  
+			}); 
+			// #endif
+		},
+		onBackPress() {
+			if (this.$refs.mpvuePicker.showPicker) {
+				this.$refs.mpvuePicker.pickerCancel();
+				return true;
+			}
+		},
+		onUnload() {
+			if (this.$refs.mpvuePicker.showPicker) {
+				this.$refs.mpvuePicker.pickerCancel();
+			}
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index === 0) {
+				this.showSinglePicker();
+			}
+		},
+		mounted(){
+			// this.$refs.map.content.$el.style.height = `400upx`
+			this.$refs.map.style.width="120"
+		}
+	}
+</script>
+<style lang="scss">
+	.content {
+		color: #333;
+	}
+
+	.map {
+		height: 1100px;
+		width: 750px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.selectDeviceView {
+		position: absolute;
+		bottom: 44upx;
+		left: 32upx;
+		z-index: 1000;
+		background: $iking-color-blue;
+		border-radius: 5upx;
+		color: #fff;
+		text-align: center;
+		width: 150upx;
+		height: 10upx;
+		font-size: 24px;
+		padding:0 8upx 0 20upx;
+	}
+	.liveView{
+		position: absolute;
+		bottom: 136upx;
+		width: 550px;
+		height: 375upx;
+		// padding: 0 40upx;
+		box-sizing: border-box;
+		left: 0;
+	}
+	.livePlayer{
+		width: 400px;
+		height: 375upx;
+	}
+	// .liveSpan{
+	// 	position: absolute;	
+	// 	top:5upx;
+	// 	left: 55upx;
+	// 	color: #fff;
+	// }
+</style>
