@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <block wx:if="{{visibleSync}}"><cover-view class="{{['uni-drawer data-v-4e5afa80',(showDrawer)?'uni-drawer--visible':'']}}"><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" class="{{['uni-drawer__mask data-v-4e5afa80',(showDrawer&&mask)?'uni-drawer__mask--visible':'']}}" bindtap="__e"></view><view class="{{['uni-drawer__content data-v-4e5afa80',(rightMode)?'uni-drawer--right':'',(!rightMode)?'uni-drawer--left':'',(showDrawer)?'uni-drawer__content--visible':'']}}"><slot></slot></view></cover-view></block>
+=======
+<block wx:if="{{visibleSync}}"><view class="{{['uni-drawer data-v-97baf42e',(showDrawer)?'uni-drawer--visible':'']}}"><view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" class="{{['uni-drawer__mask data-v-97baf42e',(showDrawer&&mask)?'uni-drawer__mask--visible':'']}}" bindtap="__e"></view><view class="{{['uni-drawer__content data-v-97baf42e',(rightMode)?'uni-drawer--right':'',(!rightMode)?'uni-drawer--left':'',(showDrawer)?'uni-drawer__content--visible':'']}}"><slot></slot></view></view></block>
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d

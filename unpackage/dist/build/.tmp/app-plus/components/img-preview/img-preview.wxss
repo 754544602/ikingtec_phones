@@ -24,7 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .page.data-v-be3a8d00 {
+=======
+.page.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
   position: fixed;
   z-index: 1001;
   color: #fff;
@@ -32,7 +36,11 @@
   text-align: center;
   width: 100%;
 }
+<<<<<<< HEAD
 .mask.data-v-be3a8d00 {
+=======
+.mask.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
   position: fixed;
   top: 0;
   left: 0;
@@ -50,20 +58,34 @@
   background-color: #000;
   z-index: 1000;
 }
+<<<<<<< HEAD
 .mask > .my_swiper.data-v-be3a8d00 {
     width: 100%;
 }
 .mask > .my_swiper .bg_img.data-v-be3a8d00 {
+=======
+.mask > .my_swiper.data-v-52663d7e {
+    width: 100%;
+}
+.mask > .my_swiper .bg_img.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
       background-size: 100% auto;
       background-repeat: no-repeat;
       background-position: center;
       width: 100%;
       height: 100%;
 }
+<<<<<<< HEAD
 .mask > .my_swiper .image.data-v-be3a8d00 {
       width: 100%;
 }
 .mask > .my_swiper .swiper-item.data-v-be3a8d00 {
+=======
+.mask > .my_swiper .image.data-v-52663d7e {
+      width: 100%;
+}
+.mask > .my_swiper .swiper-item.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
@@ -71,7 +93,11 @@
       -webkit-align-items: center;
               align-items: center;
 }
+<<<<<<< HEAD
 .pic_list.data-v-be3a8d00 {
+=======
+.pic_list.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -80,14 +106,22 @@
   -webkit-flex-flow: row wrap;
           flex-flow: row wrap;
 }
+<<<<<<< HEAD
 .pic_list > view.data-v-be3a8d00 {
+=======
+.pic_list > view.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 33.3vw;
             flex: 0 0 33.3vw;
     height: 33.3vw;
     padding: 1vw;
 }
+<<<<<<< HEAD
 .pic_list > view > image.data-v-be3a8d00 {
+=======
+.pic_list > view > image.data-v-52663d7e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
       width: 100%;
       height: 100%;
 }

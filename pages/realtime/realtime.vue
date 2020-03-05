@@ -8,9 +8,10 @@
 			</picker>
 		</view>
 		<view class="liveView">
-			<cover-view class="livePlayerView">
-				<video class="livePlayer" :src="liveSrc" id="myVideo" autoplay></video>
-			</cover-view>
+				<video class="livePlayer" :src="liveSrc" id="myVideo" autoplay>
+					<!-- <cover-view class="livePlayerView">
+					</cover-view> -->
+				</video>
 			<cover-view class="liveSpan">实时视频</cover-view>
 		</view>
 		<mpvue-picker
@@ -22,6 +23,18 @@
 		></mpvue-picker>
 		<map class="map" id="map" :latitude="latitude" :longitude="longitude">
 		</map>
+		<cover-view class="uni-list">
+			<cell>
+			<cover-view class="uni-list-item">
+				<cover-view  class="uni-list-item__container">
+					
+				<cover-view class="uni-list-item__content">
+					<cover-view class="uni-list-item__content-title">23123123</cover-view>
+					</cover-view>
+					</cover-view>
+			</cover-view>
+			</cell>
+		</cover-view>
 		<cover-view class="selectDeviceView" style="border: #333333 solid 2upx;">
 			{{deviceList[selectDevice].label}}
 			<uni-icons type="arrowdown" size="20" color="#ffffff"></uni-icons>
@@ -188,18 +201,148 @@ import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
 			border-radius: 6upx;
 			width: 100%;
 			height: 100%;
-			pointer-events: none;
-			z-index: 1;
+		}
+		.livePlayer{
+			width: 100%;
+			height: 100%;
 		}
 	}
-	.livePlayer{
-		width: 100%;
-		height: 100%;
-	}
+	
 	.liveSpan{
 		position: absolute;	
 		top:5upx;
 		left: 55upx;
 		color: #fff;
 	}
+	
+	.uni-list {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		background-color: #ffffff;
+		position: relative;
+		flex-direction: column;
+		/* border-bottom-color: $uni-border-color; */
+		/* border-bottom-style: solid; */
+		/* border-bottom-width: 1px; */
+	}
+	
+	/* #ifndef APP-NVUE */
+	.uni-list:before {
+		height: 0;
+	}
+	
+	.uni-list:after {
+		height: 0;
+	}
+	
+	/* #endif */
+	.uni-list-item {
+			font-size: 32rpx;
+			position: relative;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-left: 30rpx;
+		}
+	
+		.uni-list-item--disabled {
+			opacity: 0.3;
+		}
+	
+		.uni-list-item--hover {
+			background-color: #f1f1f1;
+		}
+	
+		.uni-list-item__container {
+			position: relative;
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: row;
+			padding: 24rpx 30rpx;
+			padding-left: 0;
+			flex: 1;
+			position: relative;
+			justify-content: space-between;
+			align-items: center;
+			/* #ifdef APP-PLUS */
+			border-top-color: #e5e5e5;
+			border-top-style: solid;
+			border-top-width: 0.5px;
+			/* #endif */
+		}
+	
+		.uni-list-item--first {
+			border-top-width: 0px;
+		}
+	
+		/* #ifndef APP-NVUE */
+		.uni-list-item__container:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 1px;
+			content: '';
+			-webkit-transform: scaleY(.5);
+			transform: scaleY(.5);
+			background-color: #e5e5e5;
+		}
+	
+		.uni-list-item--first:after {
+			height: 0px;
+		}
+	
+		/* #endif */
+	
+	
+	
+	
+	
+		.uni-list-item__content {
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex: 1;
+			overflow: hidden;
+			flex-direction: column;
+			color: #3b4144;
+	
+		}
+	
+		.uni-list-item__content-title {
+			font-size: 28rpx;
+			color: #3b4144;
+			overflow: hidden;
+		}
+	
+		.uni-list-item__content-note {
+			margin-top: 6rpx;
+			color: #999;
+			font-size: 24rpx;
+			overflow: hidden;
+		}
+	
+		.uni-list-item__extra {
+			/* width: 25%;
+	*/
+			/* #ifndef APP-NVUE */
+			display: flex;
+			/* #endif */
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	
+		.uni-list-item__icon {
+			margin-right: 18rpx;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		.uni-list-item__icon-img {
+			height: 52rpx;
+			width: 52rpx;
+		}
 </style>

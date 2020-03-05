@@ -54,7 +54,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "ikingtec_phone",
-  "compilerVersion": "2.4.6",
+  "appname": "无人机管控平台",
+  "compilerVersion": "2.5.1",
   "usingComponents": {}
 }

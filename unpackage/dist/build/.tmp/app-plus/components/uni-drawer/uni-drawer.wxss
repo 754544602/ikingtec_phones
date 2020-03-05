@@ -81,7 +81,11 @@
 
 	/* 抽屉宽度
  */
+<<<<<<< HEAD
 .uni-drawer.data-v-4e5afa80 {
+=======
+.uni-drawer.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		
 		display: block;
 		
@@ -93,7 +97,11 @@
 		overflow: hidden;
 		z-index: 999;
 }
+<<<<<<< HEAD
 .uni-drawer__content.data-v-4e5afa80 {
+=======
+.uni-drawer__content.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		
 		display: block;
 		
@@ -107,21 +115,37 @@
 		transition: transform 0.3s ease;
 		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
+<<<<<<< HEAD
 .uni-drawer--left.data-v-4e5afa80 {
+=======
+.uni-drawer--left.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		left: 0;
 		-webkit-transform: translateX(-220px);
 		        transform: translateX(-220px);
 }
+<<<<<<< HEAD
 .uni-drawer--right.data-v-4e5afa80 {
+=======
+.uni-drawer--right.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		right: 0;
 		-webkit-transform: translateX(220px);
 		        transform: translateX(220px);
 }
+<<<<<<< HEAD
 .uni-drawer__content--visible.data-v-4e5afa80 {
 		-webkit-transform: translateX(0px);
 		        transform: translateX(0px);
 }
 .uni-drawer__mask.data-v-4e5afa80 {
+=======
+.uni-drawer__content--visible.data-v-97baf42e {
+		-webkit-transform: translateX(0px);
+		        transform: translateX(0px);
+}
+.uni-drawer__mask.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		
 		display: block;
 		
@@ -135,7 +159,11 @@
 		-webkit-transition: opacity 0.3s;
 		transition: opacity 0.3s;
 }
+<<<<<<< HEAD
 .uni-drawer__mask--visible.data-v-4e5afa80 {
+=======
+.uni-drawer__mask--visible.data-v-97baf42e {
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 		
 		display: block;
 		

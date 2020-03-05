@@ -1,7 +1,15 @@
 {
+<<<<<<< HEAD
   "usingComponents": {
     "uni-icons": "/components/uni-icons/uni-icons",
     "uni-badge": "/components/uni-badge/uni-badge"
   },
   "component": true
+=======
+  "component": true,
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "uni-badge": "/components/uni-badge/uni-badge"
+  }
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
 }

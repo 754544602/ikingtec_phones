@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view class="uni-list data-v-4e473286"><slot></slot></view>
+=======
+<view class="uni-list data-v-5bc93fa6"><slot></slot></view>
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d

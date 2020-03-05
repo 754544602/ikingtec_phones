@@ -5,12 +5,12 @@
     "iPad"
   ],
   "id": "__UNI__EBEB125",
-  "name": "ikingtec_phone",
+  "name": "无人机管控平台",
   "version": {
     "name": "1.0.0",
     "code": "100"
   },
-  "description": "登录模板",
+  "description": "无人机管控平台",
   "launch_path": "__uniappview.html",
   "developer": {
     "name": "",
@@ -51,6 +51,56 @@
     "usingComponents": true,
     "runmode": "liberate",
     "distribute": {
+      "icons": {
+        "android": {
+          "hdpi": "unpackage/res/icons/72x72.png",
+          "xhdpi": "unpackage/res/icons/96x96.png",
+          "xxhdpi": "unpackage/res/icons/144x144.png",
+          "xxxhdpi": "unpackage/res/icons/192x192.png"
+        },
+        "ios": {
+          "appstore": "unpackage/res/icons/1024x1024.png",
+          "iphone": {
+            "app@3x": "unpackage/res/icons/180x180.png",
+            "app@2x": "unpackage/res/icons/120x120.png",
+            "notification@2x": "unpackage/res/icons/40x40.png",
+            "notification@3x": "unpackage/res/icons/60x60.png",
+            "settings@2x": "unpackage/res/icons/58x58.png",
+            "settings@3x": "unpackage/res/icons/87x87.png",
+            "spotlight@2x": "unpackage/res/icons/80x80.png",
+            "spotlight@3x": "unpackage/res/icons/120x120.png"
+          },
+          "ipad": {
+            "app": "unpackage/res/icons/76x76.png",
+            "app@2x": "unpackage/res/icons/152x152.png",
+            "notification": "unpackage/res/icons/20x20.png",
+            "notification@2x": "unpackage/res/icons/40x40.png",
+            "proapp@2x": "unpackage/res/icons/167x167.png",
+            "settings": "unpackage/res/icons/29x29.png",
+            "settings@2x": "unpackage/res/icons/58x58.png",
+            "spotlight": "unpackage/res/icons/40x40.png",
+            "spotlight@2x": "unpackage/res/icons/80x80.png"
+          }
+        }
+      },
+      "splashscreen": {
+        "android": {
+          "hdpi": "C:/Users/boche/Desktop/整合的副本/安卓 png/a启动页480 762.png",
+          "xhdpi": "C:/Users/boche/Desktop/整合的副本/安卓 png/a启动页720 1242.png",
+          "xxhdpi": "C:/Users/boche/Desktop/整合的副本/安卓 png/a启动页1080 1882.png"
+        },
+        "ios": {
+          "iphone": {
+            "portrait-896h@3x": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页1242 2688.png",
+            "portrait-896h@2x": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页828 1792.png",
+            "iphonex": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页1125 2436.png",
+            "retina55": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页1242 2208.png",
+            "retina47": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页750 1334.png",
+            "retina40": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页640 1136.png",
+            "retina35": "C:/Users/boche/Desktop/整合的副本/苹果 png/p启动页640 960.png"
+          }
+        }
+      },
       "google": {
         "permissions": [
           "<uses-feature android:name=\"android.hardware.camera\"/>",
@@ -71,6 +121,10 @@
       "apple": {},
       "plugins": {
         "maps": {},
+<<<<<<< HEAD
+=======
+        "oauth": {},
+>>>>>>> be2725da27076c04c6451872b091a4123cbd731d
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
@@ -86,7 +140,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.4.6",
+      "compilerVersion": "2.5.1",
       "control": "v8",
       "nvueCompiler": "uni-app",
       "renderer": "auto",
@@ -127,5 +181,9 @@
       ],
       "selected": 0
     }
-  }
+  },
+  "screenOrientation": [
+    "portrait-primary",
+    "portrait-secondary"
+  ]
 }

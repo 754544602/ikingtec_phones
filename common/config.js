@@ -1,5 +1,5 @@
 let config = {
-	basePath:"http://192.168.2.147:8000",
-	ip:'192.168.2.147'
+	basePath:"http://47.106.185.144:8000",
+	ip:'47.106.185.144'
 }
 module.exports = config
