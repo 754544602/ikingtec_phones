@@ -25,19 +25,25 @@
 /* 透明度 */
 /* 文章场景相关 */
 .mini-btn {
-  line-height: 56rpx;
+  font-family: ikingFont !important;
+  line-height: 56rpx !important;
   border-radius: 10rpx;
   background-color: #2ba3ef;
-  padding: 0 10rpx 0 27rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  font-size: 32rpx;
+  padding: 0 8rpx 0 20rpx !important;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-pack: justify !important;
+  -webkit-justify-content: space-between !important;
+          justify-content: space-between !important;
+  font-size: 32rpx !important;
+  color: #fff;
+  box-sizing: border-box;
+}
+.mini-btn:after {
+    border: none;
 }
 .mini-btn uni-text {
-    font-size: 16rpx;
+    font-size: 16rpx !important;
 }
 

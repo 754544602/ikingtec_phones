@@ -31,7 +31,7 @@
   width: 371rpx;
   height: 270rpx;
 }
-.headImage uni-image {
+.headImage .image {
     width: 100%;
     height: 100%;
 }

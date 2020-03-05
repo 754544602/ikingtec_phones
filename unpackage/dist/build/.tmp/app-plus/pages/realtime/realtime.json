@@ -1,6 +1,12 @@
 {
   "navigationBarTitleText": "实时",
+  "titleNView": {},
   "usingComponents": {
-    "iking-select": "/components/iking-select"
+    "iking-select": "/components/iking-select",
+    "mpvue-picker": "/components/mpvue-picker/mpvuePicker",
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "uni-drawer": "/components/uni-drawer/uni-drawer",
+    "uni-list": "/components/uni-list/uni-list",
+    "uni-list-item": "/components/uni-list-item/uni-list-item"
   }
 }

@@ -9,12 +9,16 @@
     "pages/pwd/pwd",
     "pages/user/user",
     "pages/realtime/realtime",
-    "pages/chat/chat"
+    "pages/chat/chat",
+    "pages/feedback/feedback"
   ],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#1d94df",
-    "backgroundColor": "#1d94df"
+    "backgroundColor": "#1d94df",
+    "pageOrientation": "portrait",
+    "bounce": "none",
+    "scrollIndicator": false
   },
   "tabBar": {
     "color": "#7a7e83",
